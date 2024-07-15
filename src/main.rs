@@ -86,6 +86,18 @@ fn main() -> std::io::Result<()> {
 
     framebuffer.set_background_color(0xe8dbcf);
 
+    // Definir detalles para polígono 1
+    let poligono1_points = [
+        Vec3::new(165.0, 380.0, 0.0), Vec3::new(185.0, 360.0, 0.0), Vec3::new(180.0, 330.0, 0.0),
+        Vec3::new(207.0, 345.0, 0.0), Vec3::new(233.0, 330.0, 0.0), Vec3::new(230.0, 360.0, 0.0),
+        Vec3::new(250.0, 380.0, 0.0), Vec3::new(220.0, 385.0, 0.0), Vec3::new(205.0, 410.0, 0.0),
+        Vec3::new(193.0, 383.0, 0.0),
+    ];
+    let poligono1_border_color = 0xFFFFFF; // Blanco
+    let poligono1_fill_color = 0xfff000;   // Amarillo
+
+    // Dibujar polígonos
+    draw_polygon(&mut framebuffer, &poligono1_points, poligono1_border_color, poligono1_fill_color);
     
     framebuffer.render_buffer("output.bmp")
 }
